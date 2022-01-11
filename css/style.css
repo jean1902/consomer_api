@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: blue;
+    padding: 20px;
+}
+h1{
+    color: white;
+    font-size: 35px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+
+}
+
+.container{
+    max-width: 400px;
+    text-align: center;
+    margin: 20% auto;
+}
+.formulaire input{
+    display: block;
+    width: 100%;
+    outline: none;
+   
+    padding: 10px 0;
+    border-radius: 5px;
+}
+.formulaire input:nth-child(1){
+    margin-bottom: 20px;
+    padding-left: 13px;
+    border: 2px solid grey;
+   
+}
+.formulaire input:nth-child(2){
+    background-color: blue;
+    border: none;
+    cursor: pointer;
+}
+.formulaire{
+    background-color: white;
+    padding: 30px;
+    border-radius: 5px;
+}
+.head_result{
+    text-align: left;
+   
+}
+.head_resultat{
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+}
+.text_result{
+    color: rgb(243, 69, 0);
+    margin-bottom: 10px;
+}
