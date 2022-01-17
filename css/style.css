@@ -16,7 +16,6 @@ h1{
 
 .container{
     max-width: 600px;
-    width: 600px;
     text-align: center;
     position: absolute;
     top: 50%;
@@ -68,7 +67,16 @@ h1{
     color: rgb(243, 69, 0);
     margin-bottom: 10px;
 }
-.resutat_search span{
+.resutat_search {
     text-align: left;
+}
+.resutat_search span {
+    display: block;
+    text-decoration: underline;
+    color: brown;
+}
+.content_definition{
+    margin-bottom: 14px;
+    line-height: 1.5em;
 }
 

@@ -13,9 +13,7 @@ fetch(
   .then((data) => {
     console.log(data);
     for (let i = 0; i < data.length; i++) {
-      console.log(data[i].definition);
-
-          dico.innerHTML += `
+      dico.innerHTML += `
           <div class="resutat_search">
           <div class="head_result">
           ${data[i].mot}
@@ -26,41 +24,57 @@ fetch(
       <span> source: ${data[i].source}</span>
       <span> nature: ${data[i].nature}</span>
           </div>
+
+          
           `;
     }
 
-    // dico.innerHTML +=
-    // `
-    // <div class="resutat_search">
-    //   <div class="head_result">
-    //   <a href="">retour</a>
-    //   </div>
-    //   <div class="content_definition">
-    //       <p class="text_resultat">
-    //          <h2 class="head_resultat"> ${data.mot}</h3>
-    //       <p class="text_result">
-    //       ${data.definition}
-    //       </p>
-    //       <span> source: ${data.source}</span>
-    //       <p> nature: ${data.nature}</span>
-    //       </p>
-    //   </div>
-    //  </div>
-    // `
+    formulaire.addEventListener("submit", () => {
+  
+      fetch(
+        `https://dicolink.p.rapidapi.com/mot/cheval/definitions?rapidapi-key=${api_key}&query=${input_search.value}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          dico.innerHTML += `
+          <div class="resutat_search">
+          <div class="head_result">
+          ${data.mot}
+      </div>
+      <div class="content_definition">
+          ${data.definition}
+      </div>
+      <span> source: ${data.source}</span>
+      <span> nature: ${data.nature}</span>
+          </div>
+
+          
+          `
+        });
+    });
+    
+    formulaire.addEventListener("keyup", () => {
+  
+      fetch(
+        `https://dicolink.p.rapidapi.com/mot/cheval/definitions?rapidapi-key=${api_key}&query=${input_search.value}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          dico.innerHTML += `
+          <div class="resutat_search">
+          <div class="head_result">
+          ${data.mot}
+      </div>
+      <div class="content_definition">
+          ${data.definition}
+      </div>
+      <span> source: ${data.source}</span>
+      <span> nature: ${data.nature}</span>
+          </div>
+
+          
+          `
+        });
+    });
+
   });
-//     formulaire.innerHTML += `
-//     <div class="resutat_search">
-//  <div class="head_result">
-//  <a href="">retour</a>
-//  </div>
-//  <div class="content_definition">
-//      <p class="text_resultat">
-//         <h2 class="head_resultat"> ${item.mot}</h3>
-//      <p class="text_result">
-//      ${item.definition}
-//      </p>
-//      <span> source: ${item.source}</span>
-//      <p> nature: ${item.nature}</span>
-//      </p>
-//  </div>
-// </div>`
